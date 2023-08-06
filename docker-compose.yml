@@ -87,7 +87,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: 05-cambio-service-1/Dockerfile
+      dockerfile: cambio-service/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
