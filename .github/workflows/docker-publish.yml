@@ -38,19 +38,18 @@ jobs:
         run: mvn spring-boot:build-image -DskipTests
         
       - name: Build Api Gateway Container Image
-        working-directory: ./dockerizing/06-api-gateway
+        working-directory: ./api-gateway
         run: mvn spring-boot:build-image -DskipTests
          
       - name: Build Cambio Microservice Jar
-        working-directory: ./dockerizing/05-cambio-service-1
+        working-directory: ./cambio-service
         run: mvn clean package -DskipTests
      
       - name: Build Book Microservice Jar
-        working-directory: ./dockerizing/book-service
+        working-directory: ./book-service
         run: mvn clean package -DskipTests
       
       - name: Docker Compose build
-        working-directory: ./dockerizing
         run: docker-compose build
       
       - name: Push to Docker Hub Container Registry
