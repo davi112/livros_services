@@ -34,7 +34,7 @@ jobs:
          distribution: 'adopt'
          
       - name: Build Eureka Container Image
-        working-directory: ./dockerizing/06-naming-server
+        working-directory: ./naming-server
         run: mvn spring-boot:build-image -DskipTests
         
       - name: Build Api Gateway Container Image
